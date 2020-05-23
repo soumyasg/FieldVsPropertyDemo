@@ -17,9 +17,13 @@ namespace PropertyVsFieldDemo
             // Subscribe to the event
             personWithProperties.NameChanged += (sender, e) => Console.WriteLine("Name has changed!");
 
-            personWithProperties.Name = "x"; // Error
-            personWithProperties.Age = 10; // Error
-            
+            personWithProperties.Name = "Sam"; // This will trigger event
+            personWithProperties.Age = 10; // This will be OK
+
+            personWithProperties.Name = string.Empty; // Runtime exception
+            personWithProperties.Age = -10; // Runtime exception
+
+
 
         }
     }
